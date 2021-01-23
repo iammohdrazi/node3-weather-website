@@ -2,6 +2,7 @@ const weatherForm = document.querySelector('form')
 const search = document.querySelector('input')
 const messageOne = document.querySelector('#message-1')
 const messageTwo = document.querySelector('#message-2')
+const messageThree= document.querySelector('#message-3')
 
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -19,7 +20,8 @@ weatherForm.addEventListener('submit', (e) => {
             messageOne.textContent = data.location
             messageTwo.textContent = data.forecast.description +'. It is currently '+ data.forecast.temperature +
             ' degress out.'+' There is a '+ data.forecast.rain+'% chance of rain.'
-            console.log(data.forecast)
+            messageThree.textContent = "Observation time is "+data.forecast.time+
+            " and the humidity is "+data.forecast.humidity+"."
         }
     })
 })
